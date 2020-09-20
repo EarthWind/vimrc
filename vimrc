@@ -118,7 +118,7 @@ Plug 'vim-airline/vim-airline'
 " 查看当前代码文件中的变量和函数列表的插件，
 " 可以切换和跳转到代码中对应的变量和函数的位置
 " 大纲式导航, Go 需要 https://github.com/jstemmer/gotags 支持
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " 自动补全括号的插件，包括小括号，中括号，以及花括号
 Plug 'jiangmiao/auto-pairs'
@@ -180,22 +180,21 @@ let NERDTreeShowHidden=0
 " 设置宽度
 " let NERDTreeWinSize=31
 " 忽略一下文件的显示
-let NERDTreeIgnore=['\.pyc','\~$','\.swp', '\.git']
+let NERDTreeIgnore=['\.pyc','\~$','\.swp', '\.git', '\.o']
 " 打开 vim 文件及显示书签列表
 let NERDTreeShowBookmarks=2
 " 在终端启动vim时，共享NERDTree
 let g:nerdtree_tabs_open_on_console_startup=0
 " 设置终端的宽度
-let NERDTreeWinSize=40
+let NERDTreeWinSize=50
 
 "==============================================================================
 "  majutsushi/tagbar 插件
 "==============================================================================
 " majutsushi/tagbar 插件打开关闭快捷键
 nmap <F9> :TagbarToggle<CR>
-
-let g:tagbar_width=30
-let g:tagbar_autopreview = 1
+" let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_width=50
 
 "==============================================================================
 "  nerdtree-git-plugin 插件
